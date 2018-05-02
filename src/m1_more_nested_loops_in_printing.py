@@ -176,16 +176,16 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     for k in range(r):
-        for j in range(((r - k) * 2) + 1):
+        for j in range((r - k)  + 1):
             if j == 0:
                 for m in range(k):
                     print(' ', end='')
-            if j < r:
+            if j < (r - k):
                 print(j + 1, end='')
-            if j == r:
+            if j == (r - k):
                 print('-', end='')
-            if j > r:
-                print('*', end='')
+        for l in range(r - k):
+                print((r - k) - l, end='')
 
         print()
 
@@ -193,7 +193,7 @@ def vee(r):
     #     for j in range((r * 2) + 1):
     #         if
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -248,8 +248,15 @@ def numbers_constant_forward(r, maxnum, n):
 
     Preconditions:  r, maxnum and n are positive integers.
     """
+    for k in range(r):
+        for j in range(maxnum):
+            for h in range(n + (maxnum - 1)):
+                print(j, end='')
+            print(' ', end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -292,8 +299,15 @@ def numbers_constant_backwards(r, maxnum, n):
        777 666 555 444 333 222 111
     Preconditions:  r, maxnum and n are positive integers.
     """
+    for k in range(r):
+        for j in range(maxnum):
+            for h in range(n + (maxnum - 1)):
+                print(maxnum - j, end='')
+            print(' ', end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -344,8 +358,15 @@ def numbers_increasing_forward(r, maxnum):
 
     Preconditions:  r and maxnum are positive integers.
     """
+    for k in range(r):
+        for j in range(maxnum):
+            for h in range(j + 1):
+                print(j + 1, end='')
+            print(' ', end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
