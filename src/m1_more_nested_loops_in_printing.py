@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Ryan Antenore.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -54,8 +54,16 @@ def triangle_right_justified(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(k + 1):
+            if j == 0:
+                for m in range(r - k -1):
+                    print(' ', end='')
+            print(j + 1, end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -108,8 +116,16 @@ def triangle_upside_down(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(r - k):
+            if j == 0:
+                for m in range(k):
+                    print(' ', end='')
+            print(j + 1, end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -159,6 +175,23 @@ def vee(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(((r - k) * 2) + 1):
+            if j == 0:
+                for m in range(k):
+                    print(' ', end='')
+            if j < r:
+                print(j + 1, end='')
+            if j == r:
+                print('-', end='')
+            if j > r:
+                print('*', end='')
+
+        print()
+
+    # for k in range(r):
+    #     for j in range((r * 2) + 1):
+    #         if
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Some tests are already written for you (above).
